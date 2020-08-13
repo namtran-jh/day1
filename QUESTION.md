@@ -9,5 +9,10 @@ It is the same
 
 3. Differences between rebase/merge - which related to commits?
  - `History logs`: **rebase** has a clean history log than **merge**
+ -  Merge preserves history whereas rebase rewrites it (**merge** easily trace history commit because the history remains same, **rebase** is more difficult because of its obliteration -> should be local repository)
+ - `Revert conflicts`: **merge** is better than **rebase**
 
-4. Merge/rebase test nhanh a/b to master
+4. Merge/rebase test branch a/b/c/d/e to master
+ - `Merge`: first merge auto solve conflicts, second merge manual solve conflicts..
+ - `Rebase`: first rebase auto solve conflicts, second rebase manual solve conflicts and second branch commit rewrite the first
+ 
