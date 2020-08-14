@@ -11,8 +11,9 @@ We do nothing with Git because the problem at here is resolving the bug. After t
 > `If someone accidentally merge a feature (feature/delete-user) onto production and have a list of commitId ended with (0492978, fc9348c, k101100), then another commit (a1fsas8) is added on top of the production branch. How do we remove that merged feature?`
 
 In this case, we use **git revert** with 3 commitID of merged feature than we create 3 new commits confirm that changes of 3 commitID (0492978, fc9348c, k101100) had been deleted. -> **WRONG**
-Other case, if we want to remove that merged feature. We will use **git reset --hard** to the commitId before the list of commit on feature branch (commitId 0492978). We use **git rebase -i commidID** then delete **pick 3commitID**
-[Then we **git checkout a1fsas8 -- FILENAME** (just get changes not the commit)]
+[1] Other case, if we want to remove that merged feature. We will use **git reset --hard** to the commitId before the list of commit on feature branch (commitId 0492978). We use **git cherry-pick commitID** or [Then we **git checkout a1fsas8 -- FILENAME** (just get changes not the commit)]
+[2] We use **git rebase -i commitID** then delete **pick 3commitID**
+
 
 # Bonus
 
